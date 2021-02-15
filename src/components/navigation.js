@@ -33,19 +33,6 @@ class Navigation extends React.Component {
               Home
             </Nav.Link>
           </Nav>
-          <Nav className="mx-auto" activeKey={location.pathname}>
-            {data.allContentfulCategory.edges.map(({node}) => {
-              return (
-                <Nav.Link
-                  eventKey={`/${node.slug}`}
-                  key={node.slug}
-                  as={Link}
-                  to={`/${node.slug}`}>
-                  {node.title}
-                </Nav.Link>
-              );
-            })}
-          </Nav>
           <Nav className="ml-auto" activeKey={location.pathname}>
             <NavDropdown title="More" id="nav-dropdown">
               <Nav.Link eventKey="/about" as={Link} to="/about">
@@ -62,31 +49,7 @@ class Navigation extends React.Component {
   }
 }
 
-/**
- * Performs a static query and feeds that into the Navigation component.
- * @param {*} props The properties of the Navigation component.
- * @return {*} The Navigation component content with the results from
- * the static query.
- */
-export default function MyNavigation(props) {
-  return (
-    <StaticQuery
-      query={graphql`
-        query {
-          allContentfulCategory(sort: {fields: sortOrder}) {
-            edges {
-              node {
-                title
-                slug
-              }
-            }
-          }
-        }
-      `}
-      render={(data) => <Navigation data={data} {...props} />}
-    />
-  );
-}
+export default Navigation;
 
 // Defines the propTypes of Navigation.
 Navigation.propTypes = {

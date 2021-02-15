@@ -9,8 +9,6 @@ import {graphql} from 'gatsby';
 import get from 'lodash/get';
 import PropTypes from 'prop-types';
 import React from 'react';
-import {Col, Row} from 'react-bootstrap';
-import CategoryPreview from '../components/category-preview';
 import Header from '../components/header';
 import Layout from '../components/layout';
 
@@ -47,63 +45,10 @@ class Home extends React.Component {
               Between a global health crisis, heightened social rights
               tension, and a polarized political environment, the world faces an
               uncertain future. This is where 2040 comes into play. Join the Lockheed
-              Martin Leadership Institute as we take a deep dive into how we can prepare for
+              Martin Leadership Institute in the near future as we take a deep dive into how we can prepare for
               what the next 20 years will bring as we explore the intersections
               of technology, social rights, and what it means to be human.
             </p>
-          </div>
-        </div>
-
-        <div className="break" />
-
-        <div className="content">
-          <div className="wrapper">
-            <h2 className="section-headline">
-              Start Exploring
-            </h2>
-            <Row>
-              {categories.map(({node}) => {
-                return (
-                  <Col key={node.slug} md={4}>
-                    <CategoryPreview category={node} />
-                  </Col>
-                );
-              })}
-            </Row>
-          </div>
-        </div>
-
-        <div className="break" />
-
-        <div className="content">
-          <div className="wrapper">
-            <h2 className="section-headline">
-              Listen to the Envision 2040 Podcast On
-            </h2>
-            <nav role="navigation">
-              <ul className={styles.navigation}>
-                <li className={styles.icon}>
-                  <a aria-label="Anchor.FM"
-                    href="https://anchor.fm/lmli">
-                    <FontAwesomeIcon icon={faPodcast} /></a>
-                </li>
-                <li className={styles.icon}>
-                  <a aria-label="Spotify"
-                    href="https://open.spotify.com/show/3sWcFQlKp21onkA35AxZ3O">
-                    <FontAwesomeIcon icon={faSpotify} /></a>
-                </li>
-                <li className={styles.icon}>
-                  <a aria-label="Google Podcasts"
-                    href="https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy80NjE5YThhYy9wb2RjYXN0L3Jzcw">
-                    <FontAwesomeIcon icon={faGooglePlay} /></a>
-                </li>
-                {/* <li className={styles.icon}>
-                  <a aria-label="Apple Podcasts"
-                    href="">
-                    <FontAwesomeIcon icon={faApple} /></a>
-                </li> */}
-              </ul>
-            </nav>
           </div>
         </div>
 
