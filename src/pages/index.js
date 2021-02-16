@@ -61,7 +61,7 @@ class Home extends React.Component {
           <div className="wrapper">
             <h2 className="section-headline">
               <Countdown
-                date={new Date(2021, 4, 15, 12)}
+                date={new Date(2021, 3, 15, 12)}
                 renderer={renderer}
               />
             </h2>
