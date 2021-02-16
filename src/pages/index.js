@@ -66,10 +66,10 @@ class Home extends React.Component {
               />
             </h2>
             <Row>
-              <Col md={6}>
+              {/* <Col md={6}>
                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/I8ZtHxOqFnY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </Col>
-              <Col md={6}>
+              </Col> */}
+              <Col md={12}>
                 <h3>Why wait for the world of tomorrow when it could be the world of today?</h3>
                 <p>
                   Between a global health crisis, heightened social rights
