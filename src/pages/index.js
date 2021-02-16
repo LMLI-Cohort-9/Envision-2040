@@ -1,21 +1,15 @@
-import {
-  faApple,
-  faGooglePlay,
-  faSpotify,
-} from '@fortawesome/free-brands-svg-icons';
-import {faPodcast} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {graphql} from 'gatsby';
+import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Header from '../components/header';
 import Layout from '../components/layout';
-
+import Countdown from 'react-countdown';
 // Brings in stuff needed for css.
 import styles from '../css/index.module.css';
 
 import headerImg from '../assets/images/header-white.svg';
+import { Row, Col } from 'react-bootstrap';
 
 /**
  * The class that represents the home page.
@@ -30,6 +24,34 @@ class Home extends React.Component {
   render() {
     const categories = get(this.props, 'data.allContentfulCategory.edges');
 
+    // Random component
+    const Completionist = () => <span>Please wait for the site to reload!</span>;
+
+    const renderer = ({ days, hours, minutes, seconds, completed }) => {
+      if (completed) {
+        // Render a completed state
+        return <Completionist />;
+      } else {
+        // Render a countdown
+        return <div class="countdown">
+          <Row class={styles.countdown}>
+            <Col md={3}>
+              <span>{days}</span> DAYS
+            </Col>
+            <Col md={3}>
+              <span>{hours}</span> HOURS
+            </Col>
+            <Col md={3}>
+              <span>{minutes}</span> MINUTES
+            </Col>
+            <Col md={3}>
+              <span>{seconds}</span> SECONDS
+            </Col>
+          </Row>
+        </div>;
+      }
+    };
+
     return (
       <Layout
         description="Join the Lockheed Martin Leadership Institute as we take a deep dive into how we can prepare for what the next 20 years will bring as we explore the intersections of technology, social rights, and what it means to be human."
@@ -38,17 +60,31 @@ class Home extends React.Component {
           <Header image={headerImg} alt={"Envision 2040"} applyGradient={true} />
           <div className="wrapper">
             <h2 className="section-headline">
-              Why wait for the world of tomorrow when it could be the world of
-              today?
+              <Countdown
+                date={new Date(2021, 4, 15, 12)}
+                renderer={renderer}
+              />
             </h2>
-            <p>
-              Between a global health crisis, heightened social rights
-              tension, and a polarized political environment, the world faces an
-              uncertain future. This is where 2040 comes into play. Join the Lockheed
-              Martin Leadership Institute in the near future as we take a deep dive into how we can prepare for
-              what the next 20 years will bring as we explore the intersections
-              of technology, social rights, and what it means to be human.
+            <Row>
+              <Col md={6}>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/I8ZtHxOqFnY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </Col>
+              <Col md={6}>
+                <h3>Why wait for the world of tomorrow when it could be the world of today?</h3>
+                <p>
+                  Between a global health crisis, heightened social rights
+                  tension, and a polarized political environment, the world faces an
+                  uncertain future. This is where 2040 comes into play. Join the Lockheed
+                  Martin Leadership Institute starting on April 15th as we take a deep dive into how we can prepare for
+                  what the next 20 years will bring as we explore the intersections
+                  of technology, social rights, and what it means to be human.
             </p>
+                <p>To stay up to date with everything Envision 2040, follow us on <a href="https://www.facebook.com/cecleadership">
+                  Facebook</a>, <a href="https://twitter.com/MUEngLdrInst">Twitter</a>, and <a href="https://www.instagram.com/muleadershipinstitute/">
+                  Instagram</a>!
+            </p>
+              </Col>
+            </Row>
           </div>
         </div>
 
