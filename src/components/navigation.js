@@ -33,15 +33,15 @@ class Navigation extends React.Component {
               Home
             </Nav.Link>
           </Nav>
-          <Nav className="ml-auto" activeKey={location.pathname}>
-            <NavDropdown title="More" id="nav-dropdown">
-              <Nav.Link eventKey="/about" as={Link} to="/about">
+          <Nav className="mx-auto" activeKey={location.pathname}>
+            <Nav.Link eventKey="/about" as={Link} to="/about">
                 About
               </Nav.Link>
-              <Nav.Link eventKey="/contact" as={Link} to="/contact">
+          </Nav>
+          <Nav className="ml-auto" activeKey={location.pathname}>
+            <Nav.Link eventKey="/contact" as={Link} to="/contact">
                 Contact Us
               </Nav.Link>
-            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
