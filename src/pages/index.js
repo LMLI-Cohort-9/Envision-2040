@@ -33,21 +33,21 @@ class Home extends React.Component {
         return <Completionist />;
       } else {
         // Render a countdown
-        return <div class="countdown">
-          <Row class={styles.countdown}>
-            <Col md={3}>
+        return <div class={styles.countdown}>
+          <ul>
+            <li >
               <span>{days}</span> DAYS
-            </Col>
-            <Col md={3}>
+            </li>
+            <li >
               <span>{hours}</span> HOURS
-            </Col>
-            <Col md={3}>
+            </li>
+            <li >
               <span>{minutes}</span> MINUTES
-            </Col>
-            <Col md={3}>
+            </li>
+            <li >
               <span>{seconds}</span> SECONDS
-            </Col>
-          </Row>
+            </li>
+          </ul>
         </div>;
       }
     };
