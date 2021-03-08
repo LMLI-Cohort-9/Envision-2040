@@ -72,12 +72,7 @@ class Home extends React.Component {
               <Col md={12}>
                 <h3>Why wait for the world of tomorrow when it could be the world of today?</h3>
                 <p>
-                  Between a global health crisis, heightened social rights
-                  tension, and a polarized political environment, the world faces an
-                  uncertain future. This is where 2040 comes into play. Join the Lockheed
-                  Martin Leadership Institute starting on April 15th as we take a deep dive into how we can prepare for
-                  what the next 20 years will bring as we explore the intersections
-                  of technology, social rights, and what it means to be human.
+                Between a global health crisis, heightened social rights tension, and a polarized political environment, the world faces an uncertain future. This is where 2040 comes into play. Join the Lockheed Martin Leadership Institute as we take a deep dive into how we can prepare for what the next 20 years will bring as we explore the intersections of technology, social rights, and how we interact with others.
             </p>
                 <p>To stay up to date with everything Envision 2040, follow us on <a href="https://www.facebook.com/cecleadership">
                   Facebook</a>, <a href="https://twitter.com/MUEngLdrInst">Twitter</a>, and <a href="https://www.instagram.com/muleadershipinstitute/">
